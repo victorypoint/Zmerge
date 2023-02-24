@@ -500,76 +500,76 @@ public class Zmerge extends JPanel implements ActionListener, FocusListener {
                             
                             // update the selected Garmin fields
                             // elevation
-                            mesg.setFieldValue(RecordMesg.AltitudeFieldNum, altitude);
-                            mesg.setFieldValue(RecordMesg.EnhancedAltitudeFieldNum, altitude);
+                            //mesg.setFieldValue(RecordMesg.AltitudeFieldNum, altitude);
+                            //mesg.setFieldValue(RecordMesg.EnhancedAltitudeFieldNum, altitude);
                             // distance
-                            mesg.setFieldValue(RecordMesg.DistanceFieldNum, _totDist);
+                            //mesg.setFieldValue(RecordMesg.DistanceFieldNum, _totDist);
                             // location
                             mesg.setFieldValue(RecordMesg.PositionLatFieldNum, zData.get(FIELD.LATITUDE));
                             mesg.setFieldValue(RecordMesg.PositionLongFieldNum, zData.get(FIELD.LONGITUDE));
                             // speed
-                            mesg.setFieldValue(RecordMesg.SpeedFieldNum, speed);
-                            mesg.setFieldValue(RecordMesg.EnhancedSpeedFieldNum, speed);
+                            //mesg.setFieldValue(RecordMesg.SpeedFieldNum, speed);
+                            //mesg.setFieldValue(RecordMesg.EnhancedSpeedFieldNum, speed);
                             
                             _lastAlt = altitude;
                             _lastTime = timestamp;
                             break;
                             
-                        case MesgNum.LAP:
+                        //case MesgNum.LAP:
                             
                             // calculate lap values
-                            int lapTime = _lastTime - _lapTime;
-                            Double lapDist = _totDist - _lapDist;
+                            //int lapTime = _lastTime - _lapTime;
+                            //Double lapDist = _totDist - _lapDist;
                             
                             // update the selected Garmin fields
                             // elevation
-                            mesg.setFieldValue(LapMesg.TotalAscentFieldNum, _lapAscent);
-                            mesg.setFieldValue(LapMesg.TotalDescentFieldNum, _lapDescent);
+                            //mesg.setFieldValue(LapMesg.TotalAscentFieldNum, _lapAscent);
+                            //mesg.setFieldValue(LapMesg.TotalDescentFieldNum, _lapDescent);
                             // distance
-                            mesg.setFieldValue(LapMesg.TotalDistanceFieldNum, lapDist);
+                            //mesg.setFieldValue(LapMesg.TotalDistanceFieldNum, lapDist);
                             // speed
-                            mesg.setFieldValue(LapMesg.AvgSpeedFieldNum, lapDist / lapTime);
-                            mesg.setFieldValue(LapMesg.MaxSpeedFieldNum, _maxLapSpd);
-                            mesg.setFieldValue(LapMesg.EnhancedAvgSpeedFieldNum, lapDist / lapTime);
-                            mesg.setFieldValue(LapMesg.EnhancedMaxSpeedFieldNum, _maxLapSpd);                            
+                            //mesg.setFieldValue(LapMesg.AvgSpeedFieldNum, lapDist / lapTime);
+                            //mesg.setFieldValue(LapMesg.MaxSpeedFieldNum, _maxLapSpd);
+                            //mesg.setFieldValue(LapMesg.EnhancedAvgSpeedFieldNum, lapDist / lapTime);
+                            //mesg.setFieldValue(LapMesg.EnhancedMaxSpeedFieldNum, _maxLapSpd);                            
                             // time
-                            mesg.setFieldValue(LapMesg.TotalElapsedTimeFieldNum, lapTime);
-                            mesg.setFieldValue(LapMesg.TotalTimerTimeFieldNum, lapTime);
+                            //mesg.setFieldValue(LapMesg.TotalElapsedTimeFieldNum, lapTime);
+                            //mesg.setFieldValue(LapMesg.TotalTimerTimeFieldNum, lapTime);
                             // set virtual
-                            mesg.setFieldValue(LapMesg.SubSportFieldNum, VIRTUAL_ACTIVITY);
+                            //mesg.setFieldValue(LapMesg.SubSportFieldNum, VIRTUAL_ACTIVITY);
                             
-                            _lapAscent = _lapDescent = _maxLapSpd = 0.0;
-                            _lapTime = _lastTime;
-                            _lapDist = _totDist;
-                            break;
+                            //_lapAscent = _lapDescent = _maxLapSpd = 0.0;
+                            //_lapTime = _lastTime;
+                            //_lapDist = _totDist;
+                            //break;
                             
-                        case MesgNum.SESSION:
+                        //case MesgNum.SESSION:
                             
-                            int elapsedTime = _lastTime - _startTime;
+                            //int elapsedTime = _lastTime - _startTime;
                             // update the selected Garmin fields
                             // elevation
-                            mesg.setFieldValue(SessionMesg.TotalAscentFieldNum, _ascent);
-                            mesg.setFieldValue(SessionMesg.TotalDescentFieldNum, _descent);
+                            //mesg.setFieldValue(SessionMesg.TotalAscentFieldNum, _ascent);
+                            //mesg.setFieldValue(SessionMesg.TotalDescentFieldNum, _descent);
                             // speed
-                            mesg.setFieldValue(SessionMesg.AvgSpeedFieldNum, _totDist / elapsedTime);
-                            mesg.setFieldValue(SessionMesg.MaxSpeedFieldNum, _maxSpd);
-                            mesg.setFieldValue(SessionMesg.EnhancedAvgSpeedFieldNum, _totDist / elapsedTime);
-                            mesg.setFieldValue(SessionMesg.EnhancedMaxSpeedFieldNum, _maxSpd);
+                            //mesg.setFieldValue(SessionMesg.AvgSpeedFieldNum, _totDist / elapsedTime);
+                            //mesg.setFieldValue(SessionMesg.MaxSpeedFieldNum, _maxSpd);
+                            //mesg.setFieldValue(SessionMesg.EnhancedAvgSpeedFieldNum, _totDist / elapsedTime);
+                            //mesg.setFieldValue(SessionMesg.EnhancedMaxSpeedFieldNum, _maxSpd);
                             // distance
-                            mesg.setFieldValue(SessionMesg.TotalDistanceFieldNum, _totDist);
+                            //mesg.setFieldValue(SessionMesg.TotalDistanceFieldNum, _totDist);
                             // time
-                            mesg.setFieldValue(SessionMesg.TotalElapsedTimeFieldNum, elapsedTime);
-                            mesg.setFieldValue(SessionMesg.TotalTimerTimeFieldNum, elapsedTime);
+                            //mesg.setFieldValue(SessionMesg.TotalElapsedTimeFieldNum, elapsedTime);
+                            //mesg.setFieldValue(SessionMesg.TotalTimerTimeFieldNum, elapsedTime);
                             //set virtual
-                            mesg.setFieldValue(SessionMesg.SubSportFieldNum, VIRTUAL_ACTIVITY);
-                            break;
+                            //mesg.setFieldValue(SessionMesg.SubSportFieldNum, VIRTUAL_ACTIVITY);
+                            //break;
                             
-                        case MesgNum.FILE_ID:
+                        //case MesgNum.FILE_ID:
                             
-                            Integer man = mesg.getFieldIntegerValue(FileIdMesg.ManufacturerFieldNum);
-                            if(man == null || man != Manufacturer.GARMIN) 
-                                throw new FitRuntimeException("Manufacturer does not match Garmin.");
-                            break;
+                            //Integer man = mesg.getFieldIntegerValue(FileIdMesg.ManufacturerFieldNum);
+                            //if(man == null || man != Manufacturer.GARMIN) 
+                            //    throw new FitRuntimeException("Manufacturer does not match Garmin.");
+                            //break;
                             
                         default:
                             break;                     
