@@ -1,13 +1,5 @@
 # Zmerge
-Merge Zwift Fit file with Garmin Fit file to add Zwift location data to Garmin.
+Merge Zwift FIT file with QZ Fitness FIT file to add Zwift location data to QZ Fitness
 
-Zmerge was created so I could get advanced pedal stroke analysis, & stress monitoring/recovery advisor, with Zwift sessions.
-
-1. Log in to Zwift
-2. Start your Garmin device 
-3. Ride
-4. Stop Garmin device
-5. Quit Zwift
-6. Merge Fit files
-7. Upload Fit file
+Zmerge is used to resolve a problem - Zwift FIT files calculate elevation/altitude incorrectly for treadmill incline. Specifically, negative incline is assigned 0 elevation. QZ FIT files, when synced to Zwift activities, don’t contain Zwift's location data (virtual lat/long), but they do contain correct calculated elevation. Zmerge will merge Zwifts FIT location data (and any other important data fields) with QZs FIT data including calculated elevation.
 
