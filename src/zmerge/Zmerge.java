@@ -455,12 +455,14 @@ public class Zmerge extends JPanel implements ActionListener, FocusListener {
                             
                             // ignore records that dont match a Zwift timestamp
                             if(zData == null) return;
+
                             // first zwift file
                             else if(_startTime == 0) {
                                 _startTime = timestamp;
                                 _lapTime = timestamp;
                                 _lastAlt = zData.get(FIELD.ALTITUDE);
                             }
+
                             // additional zwift file/s
                             else if(_fileTimestamp[_fileIndex] < timestamp) {
                                 _fileIndex++;
@@ -498,6 +500,7 @@ public class Zmerge extends JPanel implements ActionListener, FocusListener {
                             if(speed > _maxSpd) _maxSpd = speed;
                             if(speed > _maxLapSpd) _maxLapSpd = speed;
                             
+                            // *** update only location fields ***
                             // update the selected Garmin fields
                             // elevation
                             //mesg.setFieldValue(RecordMesg.AltitudeFieldNum, altitude);
@@ -515,6 +518,7 @@ public class Zmerge extends JPanel implements ActionListener, FocusListener {
                             _lastTime = timestamp;
                             break;
                             
+                        // *** skip this table ***
                         //case MesgNum.LAP:
                             
                             // calculate lap values
@@ -543,6 +547,7 @@ public class Zmerge extends JPanel implements ActionListener, FocusListener {
                             //_lapDist = _totDist;
                             //break;
                             
+                        // *** skip this table ***
                         //case MesgNum.SESSION:
                             
                             //int elapsedTime = _lastTime - _startTime;
@@ -564,6 +569,7 @@ public class Zmerge extends JPanel implements ActionListener, FocusListener {
                             //mesg.setFieldValue(SessionMesg.SubSportFieldNum, VIRTUAL_ACTIVITY);
                             //break;
                             
+                        // *** skip this table ***
                         //case MesgNum.FILE_ID:
                             
                             //Integer man = mesg.getFieldIntegerValue(FileIdMesg.ManufacturerFieldNum);
