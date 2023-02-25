@@ -10,7 +10,7 @@ Impacted routines:
 
 - private void createNewGarminFile() {
   - Ignore records that don't match a Zwift timestamp - only timestamp matching records are merged
-  - Update the selected Garmin fields in tables - record, lap, session - altitude, distance, latitude, longitude, speed - revise to just update latitude and longitude in record table
+  - Update the selected Garmin fields in tables - record, lap, session - altitude, distance, latitude, longitude, speed - just update latitude and longitude in record table
   - Check for manufacturer match to Garmin (file_id table) - skip
   
 Outstanding issues:
