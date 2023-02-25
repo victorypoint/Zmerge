@@ -15,7 +15,7 @@ Impacted routines:
   
 Outstanding issues:
 
-- Should we merge the selected fields from Zwift tables?
+- Should we merge the selected fields from these Zwift tables?
   - Record (distance, speed)
   - Lap (distance, speed, time, virtual)
   - Session (speed, distance, time, virtual)
