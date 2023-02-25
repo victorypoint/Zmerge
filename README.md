@@ -6,9 +6,8 @@ Zmerge is used to resolve a problem - Zwift FIT files calculate elevation/altitu
 Zmerge is a Java app with GUI. 
 - Requires Garmin FIT SDK.
 - Requires Oracle Java™ Runtime Environment 8 - 1.8.0 or higher.
-
-To compile: javac zmerge/*.java
-To run: java zmerge/Zmerge
+- To compile: javac zmerge/*.java
+- To run: java zmerge/Zmerge
 
 Impacted routines:
 
